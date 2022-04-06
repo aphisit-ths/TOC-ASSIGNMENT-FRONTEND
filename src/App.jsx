@@ -19,5 +19,5 @@ function App() {
 export default App;
 
 
-// Editing by Aphisit Thubsaeng
+// Editing by Aphisit
 // sarin
