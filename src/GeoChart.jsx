@@ -58,7 +58,6 @@ function GeoChart({ data }) {
       .on("click", (event, feature) => {
         setSelectedCountry(selectedCountry === feature ? null : feature);
       })
-
       .attr("class", "country")
       .transition()
       .duration(500)
@@ -67,6 +66,7 @@ function GeoChart({ data }) {
       .attr("d", (feature) => pathGenerator(feature));
 
     // render text
+    
     svg
       .selectAll(".label")
       .data([selectedCountry])

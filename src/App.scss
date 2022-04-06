@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
+    height: 100%;
     text-align: center;
     box-sizing: border-box;
     background: #393b44;
@@ -54,8 +55,9 @@ svg .country:hover {
 
 .label {
     fill: white;
-    position: fixed;
+    position: absolute;
     font-size: 32px;
+    align-items: center;
 }
 
 .hidden {
