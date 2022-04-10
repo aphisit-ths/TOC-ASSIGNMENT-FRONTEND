@@ -27,7 +27,7 @@ function GeoChart({ data }) {
     );
     const colorScale = scaleLinear()
       .domain([minProp, maxProp])
-      .range(["#393B55", "#393B44"]);
+      .range(["#ffff", "#f4f4f4"]);
 
     // use resized dimensions
     // but fall back to getBoundingClientRect, if no dimensions yet.

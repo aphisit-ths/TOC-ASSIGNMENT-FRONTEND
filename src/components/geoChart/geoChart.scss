@@ -4,10 +4,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f8f8;
+    background: linear-gradient(180deg, #242535 20%, #313447 100%);
     .tooltip {
         padding: 6px;
-        background-color: #ff8aae;
+        background-color: #f8f8f8;
         border-radius: 10px;
     }
 }
@@ -19,24 +19,16 @@ svg {
     justify-content: center;
     align-items: center;
     .country {
-        stroke: #9adcff;
-        stroke-width: 1.5;
+        stroke: #313447;
+        stroke-width: 1.5px;
         opacity: 80%;
     }
     .country:hover {
-        stroke: #2e2c2c;
-        stroke-width: 2px;
         cursor: pointer;
-        fill: #fff89a;
-    }
-    .country::selection {
-        stroke: #f8f8f8;
-        stroke-width: 2px;
-        cursor: pointer;
-        fill: palegreen;
+        fill: #C355F5;
     }
     .label {
-        fill: black;
+        fill: white;
         font-size: 2em;
         font-weight: bold;
     }
