@@ -1,14 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import {
-  select,
-  geoPath,
-  geoMercator,
-  min,
-  max,
-  scaleLinear,
-  geoOrthographic,
-  geoAzimuthalEqualArea,
-} from "d3";
+import { select, geoPath, geoMercator, min, max, scaleLinear } from "d3";
 import useResizeObserver from "./useResizeObserver";
 import "./geoChart.scss";
 /**
@@ -22,7 +13,6 @@ function GeoChart({ data }) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [score, setScore] = useState(0);
 
-  
   // will be called initially and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);
@@ -47,21 +37,38 @@ function GeoChart({ data }) {
     // projects geo-coordinates on a 2D plane
     const projection = geoMercator()
       .fitSize([width, height], selectedCountry || data)
-      .precision(100);
+      .precision(250);
 
     // takes geojson data,
     // transforms that into the d attribute of a path element
     const pathGenerator = geoPath().projection(projection);
 
-    // render each country
+    //Tooltips when hovers
+    var tooldiv = select(".geochartRoot")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("visibility", "hidden")
+      .style("position", "absolute")
+
     svg
       .selectAll(".country")
       .data(data.features)
       .join("path")
       .on("click", (event, feature) => {
         setSelectedCountry(selectedCountry === feature ? null : feature);
-        setScore(() => score+1)
-        
+        setScore(() => score + 1);
+        tooldiv.style("visibility", "hidden");
+      })
+      .on("mouseover", (e, d) => {
+        tooldiv.style("visibility", "visible").text(d.properties.name);
+      })
+      .on("mousemove", (e, d) => {
+        tooldiv
+          .style("top", e.pageY - 50 + "px")
+          .style("left", e.pageX - 50 + "px");
+      })  
+      .on("mouseout", () => {
+        tooldiv.style("visibility", "hidden");
       })
       .attr("class", "country")
       .transition()
@@ -86,11 +93,10 @@ function GeoChart({ data }) {
       )
       .attr("x", 50)
       .attr("y", 100);
-  }, [data, dimensions, "name", selectedCountry]);
+  }, [data, dimensions, selectedCountry, "tooldiv"]);
 
   return (
     <div ref={wrapperRef} className="geochartRoot">
-      
       <svg className="svg-wrapper" ref={svgRef}>
         {" "}
       </svg>{" "}

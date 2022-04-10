@@ -5,6 +5,11 @@
     align-items: center;
     justify-content: center;
     background: #f8f8f8;
+    .tooltip {
+        padding: 6px;
+        background-color: #ff8aae;
+        border-radius: 10px;
+    }
 }
 
 svg {
@@ -14,15 +19,15 @@ svg {
     justify-content: center;
     align-items: center;
     .country {
-        stroke: yellow;
+        stroke: #9adcff;
         stroke-width: 1.5;
         opacity: 80%;
     }
     .country:hover {
-        stroke: #f8f8f8;
+        stroke: #2e2c2c;
         stroke-width: 2px;
         cursor: pointer;
-        fill: #fbeeac;
+        fill: #fff89a;
     }
     .country::selection {
         stroke: #f8f8f8;
