@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { render } from "react-dom";
 import { Map, Source, Layer } from "react-map-gl";
 
-const MAPBOX_TOKEN =
-  "pk.eyJ1IjoiYXBoaXNpdC10aHMiLCJhIjoiY2wxbngxdTRiMHk3bTNpbzNnMXJraGx1OCJ9.x8ciblAzQSSJFwB3RErqNg"; // Set your mapbox token here
+const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+ 
 
 const pointLayer = {
   type: "circle",

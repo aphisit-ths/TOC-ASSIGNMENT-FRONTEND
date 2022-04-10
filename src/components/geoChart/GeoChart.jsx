@@ -10,7 +10,7 @@ import {
   geoAzimuthalEqualArea,
 } from "d3";
 import useResizeObserver from "./useResizeObserver";
-
+import "./geoChart.scss";
 /**
  * Component that renders a map of Germany.
  */
@@ -20,6 +20,9 @@ function GeoChart({ data }) {
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [score, setScore] = useState(0);
+
+  
   // will be called initially and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);
@@ -34,7 +37,7 @@ function GeoChart({ data }) {
     );
     const colorScale = scaleLinear()
       .domain([minProp, maxProp])
-      .range(["#D6E0F0", "#393B44"]);
+      .range(["#393B55", "#393B44"]);
 
     // use resized dimensions
     // but fall back to getBoundingClientRect, if no dimensions yet.
@@ -57,6 +60,8 @@ function GeoChart({ data }) {
       .join("path")
       .on("click", (event, feature) => {
         setSelectedCountry(selectedCountry === feature ? null : feature);
+        setScore(() => score+1)
+        
       })
       .attr("class", "country")
       .transition()
@@ -66,7 +71,7 @@ function GeoChart({ data }) {
       .attr("d", (feature) => pathGenerator(feature));
 
     // render text
-    
+
     svg
       .selectAll(".label")
       .data([selectedCountry])
@@ -79,13 +84,16 @@ function GeoChart({ data }) {
             ": " +
             feature.properties["name"].toLocaleString()
       )
-      .attr("x", 10)
-      .attr("y", 25);
+      .attr("x", 50)
+      .attr("y", 100);
   }, [data, dimensions, "name", selectedCountry]);
 
   return (
-    <div ref={wrapperRef} style={{ width: "100vw", height: "100vh" }}>
-      <svg ref={svgRef}> </svg>{" "}
+    <div ref={wrapperRef} className="geochartRoot">
+      
+      <svg className="svg-wrapper" ref={svgRef}>
+        {" "}
+      </svg>{" "}
     </div>
   );
 }
