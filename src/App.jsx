@@ -9,6 +9,7 @@ function App() {
     <div className="root">
       <Intro></Intro>
       <div className="box">
+        <input type="text" placeholder="ค้นหาชื่อประเทศเช่น ไทย , ญี่ปุ่น " />
        <GeoChart data={data} property={property} /> 
       </div>
     </div>

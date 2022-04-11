@@ -10,6 +10,8 @@
 
     h2 {
         color: white;
+        font-family: 'Prompt',
+        sans-serif;
     }
 
     img {
@@ -19,13 +21,15 @@
     .button {
         border-radius: 10px;
         color: #242535;
-        padding: 16px 32px;
+        padding: 10px 20px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
         margin: 4px 2px;
         transition-duration: 0.4s;
+        font-family: 'Prompt',
+        sans-serif;
         cursor: pointer;
     }
     .button2 {
