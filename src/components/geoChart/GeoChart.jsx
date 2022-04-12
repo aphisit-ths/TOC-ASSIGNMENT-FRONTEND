@@ -96,6 +96,7 @@ function GeoChart({ data }) {
   }, [data, dimensions, selectedCountry, "tooldiv"]);
 
   return (
+    
     <div ref={wrapperRef} className="geochartRoot">
       <svg className="svg-wrapper" ref={svgRef}>
         {" "}
