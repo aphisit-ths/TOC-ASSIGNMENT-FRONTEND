@@ -1,0 +1,31 @@
+.counrty-root {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow: scroll;
+    align-items: center;
+    justify-content: center;
+    .ele {
+        display: flex;
+        margin: 10px;
+        width: 150px;
+        max-height: 150px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        background: #cecece;
+        h1 {
+            font-size: 10px;
+        }
+        .img-wrapper {
+            width: 50%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

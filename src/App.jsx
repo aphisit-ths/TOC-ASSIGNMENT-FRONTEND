@@ -1,21 +1,53 @@
-import React, { useState } from "react";
-import GeoChart from "./components/geoChart/GeoChart";
-import data from "./components/geoChart/GeoChart.world.geo.json";
-import "./App.scss";
-import Intro from "./components/intro";
+import React, { useState } from 'react'
+import GeoChart from './components/geoChart/GeoChart'
+import data from './components/geoChart/GeoChart.world.geo.json'
+import './App.scss'
+import Intro from './components/intro'
+
 function App() {
-  const [property, setProperty] = useState("formal_en");
-  return (
-    <div className="root">
-      <Intro></Intro>
-      <div className="box" id="button12">
-        <input type="text" placeholder="ค้นหาชื่อประเทศเช่น ไทย , ญี่ปุ่น " />
-       <GeoChart data={data} property={property} /> 
-      </div>
-    </div>
-  );
+    const [property, setProperty] = useState('formal_en')
+    const [inputData, setInputData] = useState('')
+
+    function handleInput(event) {
+        //ไว้สำหรับดัก event ข้อมูลเวลากรอก input เพื่อจะมา update state
+        setInputData(event.target.value)
+    }
+    function clearInput() {
+        setInputData('')
+    }
+
+    function ResetButton() {
+        return (
+            <div onClick={clearInput} className="clear-input">
+                <p>X</p>{' '}
+            </div>
+        )
+    }
+
+    return (
+        <div className="root">
+            <Intro />
+            <div className="box" id="map">
+                <div className="input-area">
+                    <input
+                        type="text"
+                        placeholder={'ใส่ชื่อประเทศแล้วไปกัน...'}
+                        name="input"
+                        onChange={handleInput}
+                        value={inputData}
+                    />
+                    {inputData && <ResetButton />}
+                </div>
+                <GeoChart
+                    data={data}
+                    property={property}
+                    setInputData={setInputData}
+                />
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
 
 // Devolop by Aphisit Thupsaeng , Sarin Hongthong
