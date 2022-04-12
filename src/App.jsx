@@ -17,5 +17,4 @@ function App() {
 
 export default App;
 
-// Editing by Aphisit
-// sarin
+// Devolop by Aphisit Thupsaeng , Sarin Hongthong
