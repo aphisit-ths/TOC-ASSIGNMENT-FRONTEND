@@ -8,10 +8,11 @@
     height: 100%;
     text-align: center;
     box-sizing: border-box;
-    background: #393b44;
+    
 }
 .box {
-    background: radial-gradient(75.08% 149.64% at 63.8% 33.21%, #242535 0%, #242535 86.2%, #242535 100%);
+        background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+        animation: stars 205s linear alternate;
 
     input {
         border-radius: 10px;

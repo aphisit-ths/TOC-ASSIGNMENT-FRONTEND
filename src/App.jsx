@@ -25,7 +25,7 @@ function App() {
     <div className="root">
       <Intro data={data1}></Intro>
       <div className="box" id="button12">
-      <input type="text" placeholder="ค้นหาชื่อประเทศเช่น ไทย , ญี่ปุ่น "  />
+      <input type="text" placeholder="Search for country names"  />
        <GeoChart data={data} property={property} /> 
       </div>
     </div>
