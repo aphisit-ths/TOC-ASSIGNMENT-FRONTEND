@@ -2,7 +2,9 @@
 
 ### เบื้องต้นเว็บได้ทำการ Call Service API ไปที่หลังบ้านได้แล้ว ตอนนี้มีข้อมูลชื่อ , ธง , เมืองหลวง ที่เหลือคือ map , info
 
-### หากต้องการจะทดสอบให้ไป clone -> [Repo](https://github.com/aphisit-ths/COUNTIES-API-SERVICE) และอ่าน Readme.md ด้วย
+# ล่าสุดตอนนี้ Bind API Endpoint แล้ว
+
+### [API Service Repo](https://github.com/aphisit-ths/COUNTIES-API-SERVICE) อ่าน Readme.md ด้วย
 
 ### next task
 
