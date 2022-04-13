@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import GeoChart from './components/geoChart/GeoChart'
 import data from './components/geoChart/GeoChart.world.geo.json'
@@ -51,3 +52,5 @@ function App() {
 export default App
 
 // Devolop by Aphisit Thupsaeng , Sarin Hongthong
+
+
