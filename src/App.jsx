@@ -32,7 +32,7 @@ function App() {
                 <div className="input-area">
                     <input
                         type="text"
-                        placeholder={'ใส่ชื่อประเทศแล้วไปกัน...'}
+                        placeholder={'Enter Name Countries...'}
                         name="input"
                         onChange={handleInput}
                         value={inputData}

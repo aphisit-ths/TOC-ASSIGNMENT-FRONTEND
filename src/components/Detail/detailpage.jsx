@@ -1,9 +1,9 @@
 import React from "react";
 import "./detailpage.scss";
 
-function detailpage(props) {
+function DetailPage(props) {
   return (
-    <div className="detailpage">
+    <div className="DetailPage">
       <div class="row">
         <div class="column">
           <h2>Column 1</h2>
@@ -37,7 +37,7 @@ function detailpage(props) {
             </h4>
           </p>
           <p>
-            <a href="#button12" className="button button2">
+            <a className="button">
               Go back
             </a>
           </p>
@@ -58,4 +58,4 @@ function detailpage(props) {
   );
 }
 
-export default detailpage;
+export default DetailPage;
