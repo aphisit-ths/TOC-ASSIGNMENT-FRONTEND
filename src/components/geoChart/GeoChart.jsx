@@ -60,7 +60,10 @@ function GeoChart({ data }) {
                 setSelectedCountry(selectedCountry === feature ? null : feature)
                 tooldiv.style('visibility', 'hidden')
                 const naviagete = () => {
-                    navigate(`${feature.properties.name}` + location.search)
+                    navigate(
+                        `${feature.properties.name.toLowerCase()}` +
+                            location.search
+                    )
                 }
                 setTimeout(naviagete, 1500)
             })
@@ -92,10 +95,7 @@ function GeoChart({ data }) {
             .attr('class', 'label')
             .text(
                 (feature) =>
-                    feature &&
-                    'Name of country ' +
-                        ': ' +
-                        feature.properties['name'].toLocaleString()
+                    feature && feature.properties['name'].toLocaleString()
             )
             .attr('x', 50)
             .attr('y', 100)

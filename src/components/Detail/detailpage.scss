@@ -16,6 +16,12 @@
         h1 {
             color: white;
             font-family: 'Prompt', sans-serif;
+            font-size: 40px;
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                color: #c7c7c7;
+            }
         }
         * {
             box-sizing: border-box;

@@ -1,10 +1,37 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './detailpage.scss'
+import axios from 'axios'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 function DetailPage() {
+    const [country, setCountry] = useState()
+    const [loading, setLoading] = useState(true)
     const navigate = useNavigate()
     const location = useLocation()
+    const { id } = useParams()
+    useEffect(() => {
+        async function getAllCountry() {
+            try {
+                const res = await axios.get('http://127.0.0.1:8000/' + id)
+                if (res && res.data) {
+                    setCountry(res.data[0])
+                    setLoading(false)
+                    console.log(res.data[0])
+                }
+            } catch (error) {
+                setLoading(true)
+            }
+        }
+        getAllCountry()
+    }, [])
+    const unKnowFlag =
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flag.svg/600px-Flag.svg.png'
+    if (loading)
+        return (
+            <div>
+                <p>loading</p>
+            </div>
+        )
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -17,28 +44,30 @@ function DetailPage() {
                 <motion.div className="column">
                     <div className="img-flag">
                         <img
-                            src="https://cdn.britannica.com/38/4038-050-BDDBA6AB/Flag-Thailand.jpg"
-                            alt="Ghttps://cdn.britannica.com/38/4038-050-BDDBA6AB/Flag-Thailand.jpg"
+                            src={country ? country.flagUrl : unKnowFlag}
+                            alt={id}
                         />
                     </div>
-                    <h1 className="counrty-name">Thailand</h1>
+                    <h1 className="counrty-name">
+                        {country ? country.name : id}{' '}
+                        <span>
+                            (capital : {country ? country.capital : 'NA'})
+                        </span>
+                    </h1>
+
                     <p className="info">
-                        Thailand, country located in the centre of mainland
-                        Southeast Asia. Located wholly within the tropics,
-                        Thailand encompasses diverse ecosystems, including the
-                        hilly forested areas of the northern frontier, the
-                        fertile rice fields of the central plains, the broad
-                        plateau of the northeast, and the rugged coasts along
-                        the narrow southern peninsula. Until the second half of
-                        the 20th century, Thailand was primarily an agricultural
-                        country, but since the 1960s increasing numbers of
-                        people have moved to Bangkok, the capital, and to other
-                        cities. Although the greater Bangkok metropolitan area
-                        remains the preeminent urban centre in the country,
-                        there are other sizable cities, such as Chiang Mai in
-                        the north, Nakhon Ratchasima (Khorat), Khon Kaen, and
-                        Udon Thani in the northeast, Pattaya in the southeast,
-                        and Hat Yai in the far south.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Curabitur rhoncus ornare lectus, ac condimentum magna
+                        finibus nec. Nunc varius blandit nunc at congue. Donec
+                        aliquam pharetra sapien ac placerat. Aenean sodales
+                        vehicula lectus in vehicula. Pellentesque leo ex,
+                        condimentum ut convallis ac, blandit et ligula. Proin
+                        non risus fringilla, posuere nulla vitae, pretium mi.
+                        Morbi nibh risus, volutpat ut enim a, mattis facilisis
+                        ex. Nulla rhoncus ex sed tortor auctor, ut viverra neque
+                        molestie. Integer sit amet sapien ac lorem commodo
+                        finibus. Nunc venenatis lacus leo, vitae ultrices augue
+                        lobortis quis.
                     </p>
                     <div
                         onClick={() => {

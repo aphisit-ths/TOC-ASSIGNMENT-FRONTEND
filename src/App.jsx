@@ -1,13 +1,23 @@
-
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import GeoChart from './components/geoChart/GeoChart'
 import data from './components/geoChart/GeoChart.world.geo.json'
 import './App.scss'
 import Intro from './components/intro'
-
+import axios from 'axios'
 function App() {
     const [property, setProperty] = useState('formal_en')
     const [inputData, setInputData] = useState('')
+    const [countries, setCountries] = useState()
+    useEffect(() => {
+        async function getAllCountry() {
+            try {
+                const res = await axios.get('http://127.0.0.1:8000/')
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getAllCountry()
+    }, [])
 
     function handleInput(event) {
         //ไว้สำหรับดัก event ข้อมูลเวลากรอก input เพื่อจะมา update state
@@ -52,5 +62,3 @@ function App() {
 export default App
 
 // Devolop by Aphisit Thupsaeng , Sarin Hongthong
-
-

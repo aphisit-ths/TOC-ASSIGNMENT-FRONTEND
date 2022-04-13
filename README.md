@@ -1,15 +1,13 @@
 # TOC - ASSIGNMENT - FRONTEDN SECTION
 
-### reference / Special Thanks
+### เบื้องต้นเว็บได้ทำการ Call Service API ไปที่หลังบ้านได้แล้ว ตอนนี้มีข้อมูลชื่อ , ธง , เมืองหลวง ที่เหลือคือ map , info
 
-### github.com/muratkemaldar/using-react-hooks-with-d3.git
-
-#### lastest commit ได้เพิ่มส่วนที่เป็น tooltips เวลาที่เราเอา mouse ไปชี้ที่ country จะ show ชื่อประเทศนนั้น ๆ
+### หากต้องการจะทดสอบให้ไป clone -> [Repo](https://github.com/aphisit-ths/COUNTIES-API-SERVICE) และอ่าน Readme.md ด้วย
 
 ### next task
 
-> ### create mockup api --> json server
->
-> ### binding graphQL สำหรับ query
->
-> ### สร้างหน้า Preview ==> may be wave ?
+> ### ทำ Search and Filter
+
+#### reference / Special Thanks
+
+#### github.com/muratkemaldar/using-react-hooks-with-d3.git
