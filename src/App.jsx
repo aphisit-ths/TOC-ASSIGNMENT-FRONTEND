@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import GeoChart from './components/geoChart/GeoChart'
 import data from './components/geoChart/GeoChart.world.geo.json'
@@ -31,7 +32,7 @@ function App() {
                 <div className="input-area">
                     <input
                         type="text"
-                        placeholder={'ใส่ชื่อประเทศแล้วไปกัน...'}
+                        placeholder={'Enter Name Countries...'}
                         name="input"
                         onChange={handleInput}
                         value={inputData}
@@ -51,3 +52,5 @@ function App() {
 export default App
 
 // Devolop by Aphisit Thupsaeng , Sarin Hongthong
+
+

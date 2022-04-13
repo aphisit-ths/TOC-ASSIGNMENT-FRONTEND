@@ -1,19 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,600;1,400&display=swap");
 .intro {
     width: 100vw;
     height: 100vh;
     padding: 30px;
-    background: radial-gradient( 75.08% 149.64% at 63.8% 33.21%, #242535 0%, #242535 86.2%, #242535 100%);
-    gap: 30px;
-    img {
-        width: 500px;
-        height: 500px;
-    }
+    background:black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+    animation: stars 205s linear alternate;
+
     h1 {
         color: white;
-        font-family: "Prompt", sans-serif;
-        font-size: 3rem;
-        margin: 0;
+        font-family: 'Prompt', sans-serif;
     }
     h2 {
         color: white;
@@ -29,8 +23,12 @@
         font-size: 16px;
         margin: 4px 2px;
         transition-duration: 0.4s;
-        font-family: "Prompt", sans-serif;
+        font-family: 'Prompt',
+            sans-serif;
         cursor: pointer;
+    }
+    .button {
+        background-color: #242535;
         color: yellow;
         border: 2px solid yellow;
     }
@@ -39,8 +37,44 @@
         background-color: yellow;
         border: 2px solid yellow;
     }
+    #box {
+        background: url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/earth-2.jpg);
+        background-size: cover;
+        border: 2px solid #000;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        animation: movimiento 10s linear 0s infinite;
+        box-shadow: 0 0 25px RGBA(255, 255, 255, 0.10),
+            -8px -8px 15px #000 inset,
+            2px 2px 25px #000 inset,
+            -45px -45px 25px RGBA(0, 0, 0, 0.5) inset,
+            25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
+        margin: 6em auto;
+        transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
+    }
+    
+    @keyframes movimiento {
+        0% {
+            background-position: 0 0
+        }
+    
+        100% {
+            background-position: 355px 0
+        }
+    }
+    
+    @keyframes stars {
+        0% {
+            background-position: 0 0
+        }
+    
+        100% {
+            background-position: 0 100%
+        }
+    }
 }
-
 html {
     scroll-behavior: smooth;
 }
+
