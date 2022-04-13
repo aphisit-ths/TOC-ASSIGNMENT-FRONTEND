@@ -4,8 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
-    animation: stars 205s linear alternate;
+    //background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+    //animation: stars 205s linear alternate;
     .tooltip {
         padding: 6px;
         background-color: #f3ff46;
@@ -20,14 +20,16 @@ svg {
     justify-content: center;
     align-items: center;
     .country {
-        stroke: white;
-        stroke-width: 1.5px;
-        opacity: 80%;
+        stroke: #ffffff;
+        stroke-width: 1px;
+        opacity: 100%;
+        fill: #2c2c2c;
     }
     .country:hover {
         cursor: pointer;
-        fill: black;
+        fill: #553b94;
         stroke-width: 2px;
+        stroke: white;
     }
     .label {
         fill: white;
@@ -38,5 +40,3 @@ svg {
         display: none;
     }
 }
-
-

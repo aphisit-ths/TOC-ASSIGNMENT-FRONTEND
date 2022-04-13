@@ -8,12 +8,13 @@
     text-align: center;
     box-sizing: border-box;
     background: #f8f8f8;
+    background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
     .box {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+        //background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
         animation: stars 205s linear alternate;
         .input-area {
             display: flex;
@@ -62,9 +63,8 @@
             }
         }
     }
-}   
+}
 
 html {
     scroll-behavior: smooth;
 }
-

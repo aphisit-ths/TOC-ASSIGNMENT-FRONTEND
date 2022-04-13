@@ -15,7 +15,6 @@ function GeoChart({ data }) {
     const [selectedCountry, setSelectedCountry] = useState(null)
     let navigate = useNavigate()
     let location = useLocation()
-    let params = useParams()
 
     // will be called initially and on every data change
     useEffect(() => {
@@ -60,7 +59,10 @@ function GeoChart({ data }) {
             .on('click', (event, feature) => {
                 setSelectedCountry(selectedCountry === feature ? null : feature)
                 tooldiv.style('visibility', 'hidden')
-                navigate(`${feature.properties.name}` + location.search)
+                const naviagete = () => {
+                    navigate(`${feature.properties.name}` + location.search)
+                }
+                setTimeout(naviagete, 1500)
             })
             .on('mouseover', (e, d) => {
                 tooldiv.style('visibility', 'visible').text(d.properties.name)
@@ -97,7 +99,7 @@ function GeoChart({ data }) {
             )
             .attr('x', 50)
             .attr('y', 100)
-    }, [data, dimensions, selectedCountry, 'tooldiv'])
+    }, [data, dimensions, selectedCountry, location.search, navigate])
 
     return (
         <div ref={wrapperRef} className="geochartRoot">
