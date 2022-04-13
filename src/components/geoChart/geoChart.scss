@@ -8,7 +8,7 @@
     animation: stars 205s linear alternate;
     .tooltip {
         padding: 6px;
-        background-color: red;
+        background-color: #f3ff46;
         border-radius: 10px;
     }
 }
@@ -20,13 +20,14 @@ svg {
     justify-content: center;
     align-items: center;
     .country {
-        stroke: #313447;
+        stroke: white;
         stroke-width: 1.5px;
         opacity: 80%;
     }
     .country:hover {
         cursor: pointer;
-        fill: #c355f5;
+        fill: black;
+        stroke-width: 2px;
     }
     .label {
         fill: white;
