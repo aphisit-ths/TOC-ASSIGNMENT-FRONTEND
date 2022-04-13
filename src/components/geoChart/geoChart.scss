@@ -4,7 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, #242535 20%, #313447 100%);
+    background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+    animation: stars 205s linear alternate;
     .tooltip {
         padding: 6px;
         background-color: red;
@@ -36,3 +37,5 @@ svg {
         display: none;
     }
 }
+
+
