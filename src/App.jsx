@@ -9,16 +9,6 @@ function App() {
     const [property, setProperty] = useState('formal_en')
     const [inputData, setInputData] = useState('')
     const [countries, setCountries] = useState()
-    useEffect(() => {
-        async function getAllCountry() {
-            try {
-                const res = await axios.get('http://127.0.0.1:8000/')
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        getAllCountry()
-    }, [])
 
     function handleInput(event) {
         //ไว้สำหรับดัก event ข้อมูลเวลากรอก input เพื่อจะมา update state
