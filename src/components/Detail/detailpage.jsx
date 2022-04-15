@@ -25,6 +25,7 @@ function DetailPage() {
                 }
             } catch (error) {
                 setLoading(true)
+                console.log(error)
             }
         }
         getAllCountry()
