@@ -9,13 +9,16 @@
     box-sizing: border-box;
     background: #f8f8f8;
     background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
     .box {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        //background: black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
-        animation: stars 205s linear alternate;
         .input-area {
             display: flex;
             flex-direction: row;
@@ -23,7 +26,7 @@
             justify-content: center;
             align-items: center;
             position: sticky;
-            color: white;
+            color: #858585;
             input {
                 width: 80%;
                 height: 60px;
@@ -34,11 +37,11 @@
                 text-align: center;
                 margin: 20px;
                 background-color: transparent;
-                color: #fff;
-                border-color: #ffff;
+                color: #858585;
+                border-color: #858585;
             }
             input::placeholder {
-                color: #ffffff;
+                color: #858585;
             }
             input:focus {
                 border-color: rgb(36, 229, 255);

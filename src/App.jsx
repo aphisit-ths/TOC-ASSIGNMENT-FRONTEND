@@ -39,7 +39,7 @@ function App() {
         <div className="root">
             <Intro />
             <div className="box" id="map">
-                <div className="input-area">
+                {/* <div className="input-area">
                     <input
                         type="text"
                         placeholder={'Enter Name Countries...'}
@@ -48,7 +48,7 @@ function App() {
                         value={inputData}
                     />
                     {inputData && <ResetButton />}
-                </div>
+                </div> */}
                 <GeoChart
                     data={data}
                     property={property}

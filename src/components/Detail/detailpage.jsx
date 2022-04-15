@@ -30,7 +30,7 @@ function DetailPage() {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flag.svg/600px-Flag.svg.png'
     if (loading)
         return (
-            <div>
+            <div className="DetailPage">
                 <p>loading</p>
             </div>
         )
@@ -47,48 +47,41 @@ function DetailPage() {
                     <div className="img-flag">
                         <img
                             src={country ? country.flagUrl : unKnowFlag}
-                            alt={id}
+                            alt="Girl in a jacket"
                         />
                     </div>
                     <h1 className="counrty-name">
                         {country ? country.name : id}{' '}
-                        <span>
-                            (capital : {country ? country.capital : 'NA'})
-                        </span>
+                        <span>: {country ? country.capital : 'NA'}</span>
                     </h1>
+                    <p className="president-name">
+                        {country ? country.headOfGoverment : 'NaN'}{' '}
+                    </p>
 
                     <p className="info">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Curabitur rhoncus ornare lectus, ac condimentum magna
-                        finibus nec. Nunc varius blandit nunc at congue. Donec
-                        aliquam pharetra sapien ac placerat. Aenean sodales
-                        vehicula lectus in vehicula. Pellentesque leo ex,
-                        condimentum ut convallis ac, blandit et ligula. Proin
-                        non risus fringilla, posuere nulla vitae, pretium mi.
-                        Morbi nibh risus, volutpat ut enim a, mattis facilisis
-                        ex. Nulla rhoncus ex sed tortor auctor, ut viverra neque
-                        molestie. Integer sit amet sapien ac lorem commodo
-                        finibus. Nunc venenatis lacus leo, vitae ultrices augue
-                        lobortis quis.
+                        {country ? country.info : 'NaN'}{' '}
+                        <span
+                            className="readmore"
+                            onClick={() => {
+                                navigate(`${'/readmore/' + id}`)
+                            }}
+                        >
+                            readmore...{' '}
+                        </span>{' '}
                     </p>
+
                     <div
-                        onClick={() => {
-                            navigate('/' + location.search)
-                        }}
+                        onClick={() => navigate('/#map' + location.search)}
                         className="back-button"
                     >
                         Go back
                     </div>
                 </motion.div>
-                <div className="column">
-                    <div className="img-map">
-                        <img
-                            src="https://cdn.britannica.com/47/4047-050-71A61B0E/Thailand-map-boundaries-cities-locator.jpg"
-                            alt="Girl in a jacket"
-                            width="400"
-                            height="500"
-                        />
-                    </div>
+                <div className="column-map">
+                    <img
+                        src={country ? country.mapUrl : unKnowFlag}
+                        alt="Girl in a jacket"
+                    />
                 </div>
             </div>
         </motion.div>

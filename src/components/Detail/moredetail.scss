@@ -1,0 +1,63 @@
+.moredetail-root {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    background: #f5f6fa;
+    flex-direction: column;
+    padding-top: 10em;
+    padding-left: 20em;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+    .back-btn {
+        font-weight: 500;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    .img-section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        .map-img {
+            max-width: 700px;
+            max-height: 500px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                max-height: auto;
+                align-self: center;
+            }
+        }
+    }
+    .title-section {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        .cappital-name {
+            color: #bdbdbd;
+        }
+        .country-name {
+            font-size: 40px;
+        }
+        .president-name {
+            font-size: 25px;
+            font-weight: 300;
+        }
+    }
+    .info-section {
+        width: 60%;
+        height: auto;
+        background: #ffffff;
+        border-radius: 30px;
+        padding: 20px;
+        margin-bottom: 5rem;
+        .info {
+            color: #777777;
+            font-size: 16px;
+        }
+    }
+}

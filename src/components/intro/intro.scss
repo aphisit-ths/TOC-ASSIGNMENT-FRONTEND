@@ -15,7 +15,7 @@
         border-radius: 50%;
         width: 500px;
         height: 500px;
-        animation: movimiento 10s linear 0s infinite;
+        animation: movimiento 15s linear 0s infinite;
         box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset, 2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset, 25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
         margin: 1em;
         transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
@@ -41,30 +41,22 @@
         transition-duration: 0.4s;
         font-family: 'Prompt', sans-serif;
         cursor: pointer;
-        background-color: transparent;
-        color: yellow;
-        border: 2px solid yellow;
+        background-color: #ffca00;
+        color: black;
+        border: 2px solid #ffca00;
         margin-top: 20px;
     }
     .button:hover {
-        color: #242535;
-        background-color: yellow;
-        border: 2px solid yellow;
+        color: white;
+        background-color: transparent;
+        border: 2px solid #ffca00;
     }
     @keyframes movimiento {
         0% {
             background-position: 0 0;
         }
         100% {
-            background-position: 355px 0;
-        }
-    }
-    @keyframes stars {
-        0% {
-            background-position: 0 0;
-        }
-        100% {
-            background-position: 0 100%;
+            background-position: 400px 0;
         }
     }
 }
