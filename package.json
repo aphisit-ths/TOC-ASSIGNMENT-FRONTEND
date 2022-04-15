@@ -1,4 +1,5 @@
 {
+    "homepage": "aphisit-ths.github.io/TOC-ASSIGNMENT-FRONTEND",
     "name": "country-happy",
     "version": "0.1.0",
     "private": true,
@@ -7,6 +8,7 @@
         "d3": "^7.3.0",
         "dotenv": "^16.0.0",
         "framer-motion": "^6.2.10",
+        "gh-pages": "^3.2.3",
         "mapbox-gl": "^2.7.1",
         "ml5": "^0.10.1",
         "react": "^16.10.2",
