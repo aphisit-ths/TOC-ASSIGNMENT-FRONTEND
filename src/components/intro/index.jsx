@@ -10,18 +10,39 @@ function Intro() {
             exit={{ opacity: 0 }}
             className="intro"
         >
-            <div className="earth3d"></div>
+            <motion.div
+                animate={{ opacity: [0, 1], x: [-60, 1] }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
+                exit={{ opacity: 0 }}
+                className="earth3d"
+            ></motion.div>
 
-            <h1>Country and world leaders information</h1>
+            <motion.h1
+                animate={{ opacity: [0, 1], y: [30, 1] }}
+                transition={{ ease: 'easeInOut', duration: 1.5 }}
+                exit={{ opacity: 0 }}
+            >
+                Country and world leaders information
+            </motion.h1>
 
-            <h2>
+            <motion.h2
+                animate={{ opacity: [0, 1], x: [-100, 1] }}
+                transition={{ ease: 'easeInOut', duration: 1.7 }}
+                exit={{ opacity: 0 }}
+            >
                 Do you want to know what's the population in each country? And
                 who are the leaders now?
-            </h2>
+            </motion.h2>
 
-            <a href="#map" className="button">
+            <motion.a
+                animate={{ opacity: [0, 1], y: [20, 1] }}
+                transition={{ ease: 'easeInOut', duration: 1.5 }}
+                exit={{ opacity: 0 }}
+                href="#map"
+                className="button"
+            >
                 Let's go !
-            </a>
+            </motion.a>
         </motion.div>
     )
 }

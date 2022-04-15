@@ -21,14 +21,14 @@ svg {
     justify-content: center;
     align-items: center;
     .country {
-        stroke: #858585;
-        stroke-width: 1px;
+        stroke: white;
+        stroke-width: 1.5px;
         opacity: 100%;
-        fill: #ffffff;
+        fill: #e2e2e2;
     }
     .country:hover {
         cursor: pointer;
-        fill: #553b94;
+        fill: #ffca00;
         stroke-width: 2px;
         stroke: white;
     }

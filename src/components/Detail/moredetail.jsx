@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import './moredetail.scss'
 import axios from 'axios'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import LoadingScrean from '../loading/loading'
+
 function MoreDetail() {
     const [country, setCountry] = useState()
     const [loading, setLoading] = useState(true)
@@ -30,8 +32,8 @@ function MoreDetail() {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flag.svg/600px-Flag.svg.png'
     if (loading)
         return (
-            <div className="MoreDetail">
-                <p>loading</p>
+            <div className="DetailPage">
+                <LoadingScrean />
             </div>
         )
     return (
@@ -57,6 +59,11 @@ function MoreDetail() {
                 <h2 className="president-name">
                     {country ? country.headOfGoverment : 'NaN'}{' '}
                 </h2>
+                <span className="cappital-name">
+                    <a href={country ? country.sourceUrl : 'NA'}>
+                        source : {country ? country.sourceUrl : 'NA'}
+                    </a>
+                </span>
             </div>
             <div className="img-section">
                 <div className="flag-img">
