@@ -4,10 +4,7 @@ import './intro.scss'
 function Intro() {
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 1 }}
-            exit={{ opacity: 0 }}
             className="intro"
         >
             <motion.div
@@ -18,7 +15,7 @@ function Intro() {
             ></motion.div>
 
             <motion.h1
-                animate={{ opacity: [0, 1], y: [30, 1] }}
+                animate={{ opacity: [0, 1], x: [30, 1] }}
                 transition={{ ease: 'easeInOut', duration: 1.5 }}
                 exit={{ opacity: 0 }}
             >
