@@ -60,11 +60,14 @@ function GeoChart({ data }) {
                 setSelectedCountry(selectedCountry === feature ? null : feature)
                 tooldiv.style('visibility', 'hidden')
                 const naviagete = () => {
-                    if (feature.properties.name.toLowerCase() === 'greenland') {
+                    if (
+                        feature.properties.name_long.toLowerCase() ===
+                        'greenland'
+                    ) {
                         navigate('denmark' + location.search)
                     } else {
                         navigate(
-                            `${feature.properties.name.toLowerCase()}` +
+                            `${feature.properties.name_long.toLowerCase()}` +
                                 location.search
                         )
                     }
@@ -74,7 +77,7 @@ function GeoChart({ data }) {
             .on('mouseover', (e, d) => {
                 tooldiv
                     .style('visibility', 'visible')
-                    .text(d.properties.sovereignt)
+                    .text(d.properties.name_long)
             })
             .on('mousemove', (e, d) => {
                 tooldiv

@@ -4,6 +4,7 @@ import LoadingScrean from '../loading/loading'
 import './detailpage.scss'
 import axios from 'axios'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { motionVariants } from '../../utils/motionvariants'
 function DetailPage() {
     const [country, setCountry] = useState()
     const [loading, setLoading] = useState(true)
@@ -17,11 +18,9 @@ function DetailPage() {
                     'https://countries-api-service.herokuapp.com/' + id
                 )
                 if (res && res.data) {
-                    setLoading(true)
-                    setTimeout(() => {
-                        setCountry(res.data[0])
-                        setLoading(false)
-                    }, 5000)
+                    setCountry(res.data[0])
+                    setLoading(false)
+                    setTimeout(() => {}, 100)
                 }
             } catch (error) {
                 setLoading(true)
@@ -42,15 +41,14 @@ function DetailPage() {
         <motion.div className="DetailPage">
             <div className="row">
                 <motion.div
-                    animate={{ opacity: [0, 1] }}
                     transition={{ ease: 'easeInOut', duration: 1 }}
-                    exit={{ opacity: 0 }}
+                    variants={motionVariants}
                     className="column"
                 >
                     <motion.div
-                        animate={{ opacity: [0, 1], y: [-60, 1] }}
+                        animate="slideToBottom"
                         transition={{ ease: 'easeInOut', duration: 1 }}
-                        exit={{ opacity: 0 }}
+                        variants={motionVariants}
                         className="img-flag"
                     >
                         <motion.img
@@ -60,34 +58,34 @@ function DetailPage() {
                         />
                     </motion.div>
                     <motion.h1
-                        animate={{ opacity: [0, 1], x: [-60, 1] }}
+                        animate="slideToRight"
                         transition={{ ease: 'easeInOut', duration: 1.3 }}
-                        exit={{ opacity: 0 }}
+                        variants={motionVariants}
                         className="counrty-name"
                     >
                         {country ? country.name : id}{' '}
                         <span>: {country ? country.capital : 'NA'}</span>
                     </motion.h1>
                     <motion.p
-                        animate={{ opacity: [0, 1], x: [-60, 1] }}
+                        animate="slideToRight"
                         transition={{ ease: 'easeInOut', duration: 1.7 }}
-                        exit={{ opacity: 0 }}
+                        variants={motionVariants}
                         className="president-name"
                     >
                         {country ? country.headOfGoverment : 'NaN'}{' '}
                     </motion.p>
                     <motion.p
-                        animate={{ opacity: [0, 1], y: [60, 1] }}
+                        animate="slideToTop"
                         transition={{ ease: 'easeInOut', duration: 1.7 }}
-                        exit={{ opacity: 0 }}
+                        variants={motionVariants}
                         className="info"
                     >
                         {country ? country.info : 'NaN'}{' '}
                     </motion.p>
                     <motion.span
-                        animate={{ opacity: [0, 1], y: [60, 1] }}
+                        animate="slideToBottom"
                         transition={{ ease: 'easeInOut', duration: 1.7 }}
-                        exit={{ opacity: 0 }}
+                        variants={motionVariants}
                         className="readmore"
                         onClick={() => {
                             navigate(`${'/readmore/' + id}`)
@@ -96,9 +94,9 @@ function DetailPage() {
                         readmore...{' '}
                     </motion.span>{' '}
                     <motion.div
-                        animate={{ opacity: [0, 1], y: [60, 1] }}
+                        animate="slideTotop"
                         transition={{ ease: 'easeInOut', duration: 1.7 }}
-                        exit={{ opacity: 0 }}
+                        variants={motionVariants}
                         onClick={() => navigate('/#map' + location.search)}
                         className="back-button"
                     >
@@ -106,9 +104,9 @@ function DetailPage() {
                     </motion.div>
                 </motion.div>
                 <motion.div
-                    animate={{ opacity: [0, 1], y: [60, 1] }}
+                    animate="slidToLeft"
                     transition={{ ease: 'easeInOut', duration: 1.7 }}
-                    exit={{ opacity: 0 }}
+                    variants={motionVariants}
                     className="column-map"
                 >
                     <img

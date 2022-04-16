@@ -14,6 +14,11 @@
     }
 }
 
+.svg-wrapper {
+    width: 100%;
+    max-height: fit-content;
+}
+
 svg {
     display: flex;
     width: 100%;
@@ -23,7 +28,6 @@ svg {
     .country {
         stroke: white;
         stroke-width: 1.5px;
-        opacity: 100%;
         fill: #e2e2e2;
     }
     .country:hover {

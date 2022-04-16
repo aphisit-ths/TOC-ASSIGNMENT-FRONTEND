@@ -1,11 +1,10 @@
+@import '../../global.scss';
 .DetailPage {
     width: 100vw;
-    height: 100vh;
-    padding: 30px;
+    height: auto;
     background: #313447 url(https://about.me/cdn-cgi/image/q=40,dpr=6,f=auto,fit=cover,w=620,h=413.3333333333333,gravity=auto/https://assets.about.me/background/users/a/s/t/astrospace_1411626034_67.jpg);
     animation: stars 205s linear alternate;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1em;
@@ -20,12 +19,18 @@
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
+        padding: 2em;
+        @include mobile {
+            padding: 2em;
+            flex-direction: column;
+            height: auto;
+        }
         .column {
             display: flex;
             flex-direction: column;
             width: 50%;
             padding: 10px;
-            height: 100%;
+            height: auto;
             justify-content: center;
             align-items: center;
             .img-flag {
@@ -36,6 +41,13 @@
                     height: auto;
                     max-height: 90%;
                 }
+            }
+            @include mobile {
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                justify-content: center;
+                align-self: center;
             }
             .counrty-name {
                 color: #ffffff;
@@ -80,10 +92,14 @@
                 width: 700px;
                 height: 500px;
                 img {
-                    width: 100%;
+                    width: 500px;
                     height: auto;
                     border-radius: 15%;
                 }
+            }
+            @include mobile {
+                height: auto;
+                width: 100%;
             }
         }
         .back-button {

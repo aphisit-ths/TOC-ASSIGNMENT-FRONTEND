@@ -1,3 +1,4 @@
+@import '../../global.scss';
 .intro {
     width: 100vw;
     height: 100vh;
@@ -19,10 +20,14 @@
         box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset, 2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset, 25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
         margin: 1em;
         transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
+        @include mobile {
+            width: 250px;
+            height: 250px;
+        }
     }
     h1 {
         color: white;
-        font-size: 45px;
+        font-size: 3em;
     }
     h2 {
         color: white;

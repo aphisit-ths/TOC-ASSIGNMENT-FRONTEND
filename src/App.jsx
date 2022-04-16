@@ -7,34 +7,25 @@ import axios from 'axios'
 import { motion } from 'framer-motion'
 function App() {
     const [property, setProperty] = useState('formal_en')
-    const [inputData, setInputData] = useState('')
-    const [countries, setCountries] = useState()
-
-    function handleInput(event) {
-        //ไว้สำหรับดัก event ข้อมูลเวลากรอก input เพื่อจะมา update state
-        setInputData(event.target.value)
-    }
-    function clearInput() {
-        setInputData('')
-    }
-
-    function ResetButton() {
-        return (
-            <div onClick={clearInput} className="clear-input">
-                <p>X</p>{' '}
-            </div>
-        )
-    }
+    useEffect(() => {
+        async function getAllCountry() {
+            try {
+                const res = await axios.get(
+                    'https://countries-api-service.herokuapp.com/'
+                )
+                console.log(res)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getAllCountry()
+    }, [])
 
     return (
         <div className="root">
             <Intro />
             <div className="box" id="map">
-                <GeoChart
-                    data={data}
-                    property={property}
-                    setInputData={setInputData}
-                />
+                <GeoChart data={data} property={property} />
             </div>
         </div>
     )
