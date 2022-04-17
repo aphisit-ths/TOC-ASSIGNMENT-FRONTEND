@@ -126,7 +126,12 @@ function GeoChart({ data }) {
                 className="svg-wrapper"
                 ref={svgRef}
             >
-                {' '}
+                <foreignObject
+                    x="20"
+                    y="20"
+                    width="1800"
+                    height="1200"
+                ></foreignObject>{' '}
             </svg>{' '}
         </motion.div>
     )
