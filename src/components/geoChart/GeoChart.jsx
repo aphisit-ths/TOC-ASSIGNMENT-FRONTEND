@@ -121,6 +121,8 @@ function GeoChart({ data }) {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
+                width="1800"
+                height="1200"
                 className="svg-wrapper"
                 ref={svgRef}
             >

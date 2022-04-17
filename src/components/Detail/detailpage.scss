@@ -1,7 +1,8 @@
 @import '../../global.scss';
 .DetailPage {
     width: 100vw;
-    height: auto;
+    min-height: 100vh;
+    max-height: auto;
     background: #313447 url(https://about.me/cdn-cgi/image/q=40,dpr=6,f=auto,fit=cover,w=620,h=413.3333333333333,gravity=auto/https://assets.about.me/background/users/a/s/t/astrospace_1411626034_67.jpg);
     animation: stars 205s linear alternate;
     display: flex;
