@@ -19,7 +19,6 @@ function GeoChart({ data }) {
     // will be called initially and on every data change
     useEffect(() => {
         const svg = select(svgRef.current)
-
         const minProp = min(
             data.features,
             (feature) => feature.properties['pop_est']

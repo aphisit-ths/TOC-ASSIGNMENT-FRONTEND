@@ -9,33 +9,37 @@ function Intro() {
             className="intro"
         >
             <motion.div
-                animate="slideToLeft"
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ x: 600 }}
                 transition={{ ease: 'easeInOut', duration: 1 }}
-                variants={motionVariants}
                 className="earth3d"
             ></motion.div>
 
             <motion.h1
-                animate="slideToTop"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ x: 600 }}
                 transition={{ ease: 'easeInOut', duration: 1.5 }}
-                variants={motionVariants}
             >
                 Country and world leaders information
             </motion.h1>
 
             <motion.h2
-                animate="slideToTop"
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ x: 600 }}
                 transition={{ ease: 'easeInOut', duration: 1.7 }}
-                variants={motionVariants}
             >
                 Do you want to know what's the population in each country? And
                 who are the leaders now?
             </motion.h2>
 
             <motion.a
-                animate="slideToBottom"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ x: 600 }}
                 transition={{ ease: 'easeInOut', duration: 1.5 }}
-                variants={motionVariants}
                 href="#map"
                 className="button"
             >
